@@ -149,7 +149,7 @@ alsa_monitor.rules = {
       --["latency.internal.rate"]  = 0
       --["latency.internal.ns"]    = 0
       --["clock.name"]             = "api.alsa.0"
-      --["session.suspend-timeout-seconds"] = 5,  -- 0 disables suspend
+      ["session.suspend-timeout-seconds"] = 0,  -- 0 disables suspend
     },
   },
   {
@@ -179,6 +179,65 @@ alsa_monitor.rules = {
     },
     apply_properties = {
       ["api.alsa.headroom"] = 2048,
+    },
+  },
+  {
+    matches = {
+      {
+        {
+          "node.name",
+          "matches",
+          "alsa_output.usb-LOUD_Technologies_Inc.BIG_KNOB_STUDIO-00.analog-surround-40"
+        },
+      },
+    },
+    apply_properties = {
+      ["api.alsa.headroom"] = 1024,
+    },
+  },
+  {
+    matches = {
+      {
+        {
+          "node.name",
+          "matches",
+          "alsa_output.pci-0000_00_1b.0.analog-stereo"
+        },
+      },
+    },
+    apply_properties = {
+      ["api.alsa.period-size"]   = 4096,      
+      ["api.alsa.headroom"]      = 4096,
+    },
+  },
+  -- Audio via HDTV - Requires headroom
+  {
+    matches = {
+      {
+        {
+          "node.name",
+          "matches",
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1"
+        },
+      },
+    },
+    apply_properties = {
+      ["api.alsa.period-size"] = 1024,
+      ["api.alsa.headroom"] = 1024,
+   },
+  },
+  {
+    matches = {
+      {
+        {
+          "node.name",
+          "matches",
+          "alsa_card.usb-Focusrite_Scarlett_2i2_USB_Y8PHBR09983817-00"
+        },
+      },
+    },
+    apply_properties = {
+      ["api.alsa.headroom"] = 4096,
     },
   },
 }
