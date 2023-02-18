@@ -1,3 +1,11 @@
+AudioWire 0.6
+~~~~~~~~~~~~~~~~~~
+
+Fixes:
+
+  - Added fixes from the latest WirePlumber Release
+  - Fixed cracking sound (again.)
+  
 AudioWire 0.5
 ~~~~~~~~~~~~~~~~~~
 
