@@ -39,6 +39,7 @@ bluetooth_policy.policy = {
     "Microsoft Edge input", "Vivaldi input", "ZOOM VoiceEngine",
     "Telegram Desktop", "telegram-desktop", "linphone", "Mumble",
     "WEBRTC VoiceEngine", "Skype", "Firefox Developer Edition",
+    "Firefox Nightly", "Opera input",
   },
 }
 
