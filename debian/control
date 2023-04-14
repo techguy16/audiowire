@@ -1,9 +1,7 @@
-Source: wireplumber
+Source: audiowire
 Section: libs
 Priority: optional
-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@alioth-lists.debian.net>
-Uploaders: Sjoerd Simons <sjoerd@debian.org>,
-           Dylan Aïssi <daissi@debian.org>
+Maintainer: techguy16 <88870951+techguy16@users.noreply.github.com>
 Build-Depends: debhelper-compat (= 13),
                doxygen,
                gobject-introspection,
@@ -30,7 +28,7 @@ Vcs-Browser: https://salsa.debian.org/utopia-team/wireplumber
 Vcs-Git: https://salsa.debian.org/utopia-team/wireplumber.git
 Rules-Requires-Root: no
 
-Package: libwireplumber-0.4-0
+Package: libaudiowire-0.4-0
 Architecture: i386 amd64 arm64
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -43,16 +41,16 @@ Description: Shared libraries for WirePlumber
  .
  This package contains the shared library and plugins.
 
-Package: libwireplumber-0.4-dev
+Package: libaudiowire-0.4-dev
 Section: libdevel
 Architecture: i386 amd64 arm64
 Multi-Arch: same
 Depends: ${misc:Depends},
          libglib2.0-dev,
          libpipewire-0.3-dev,
-         libwireplumber-0.4-0 (= ${binary:Version}),
+         libaudiowire-0.4-0 (= ${binary:Version}),
          gir1.2-wp-0.4 (= ${binary:Version}),
-Suggests: wireplumber-doc
+Suggests: audiowire-doc
 Description: Development files for WirePlumber
  WirePlumber is a modular session / policy manager for PipeWire and a
  GObject-based high-level library that wraps PipeWire's API, providing
@@ -61,15 +59,15 @@ Description: Development files for WirePlumber
  .
  This package contains the development files.
 
-Package: wireplumber
+Package: audiowire
 Architecture: i386 amd64 arm64
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libwireplumber-0.4-0 (= ${binary:Version}),
+         libaudiowire-0.4-0 (= ${binary:Version}),
          pipewire (>= 0.3.52),
 Recommends: pipewire-pulse
 Suggests: libspa-0.2-bluetooth,
-          wireplumber-doc
+          audiowire-doc
 Conflicts: pipewire-media-session
 Replaces: pipewire-media-session
 Section: video
@@ -81,7 +79,7 @@ Description: modular session / policy manager for PipeWire
  .
  This package contains the WirePlumber daemon and command-line utilities.
 
-Package: wireplumber-doc
+Package: audiowire-doc
 Section: doc
 Build-Profiles: <!nodoc>
 Architecture: all
@@ -101,7 +99,7 @@ Architecture: i386 amd64 arm64
 Multi-Arch: same
 Depends: ${misc:Depends},
          ${gir:Depends},
-         libwireplumber-0.4-0 (= ${binary:Version}),
+         libaudiowire-0.4-0 (= ${binary:Version}),
 Description: GObject introspection files for WirePlumber
  WirePlumber is a modular session / policy manager for PipeWire and a
  GObject-based high-level library that wraps PipeWire's API, providing
