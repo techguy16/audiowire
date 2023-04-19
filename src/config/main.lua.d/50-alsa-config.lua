@@ -141,7 +141,7 @@ alsa_monitor.rules = {
       --["api.alsa.period-size"]   = 1024,
       --["api.alsa.period-num"]    = 2,
       --["api.alsa.headroom"]      = 0,
-      --["api.alsa.start-delay"]   = 0,
+      ["api.alsa.start-delay"]   = 0,
       --["api.alsa.disable-mmap"]  = false,
       --["api.alsa.disable-batch"] = false,
       --["api.alsa.use-chmap"]     = false,
@@ -154,6 +154,7 @@ alsa_monitor.rules = {
   },
   {
     -- Devices known to require a headroom.
+    -- They're all from the Reddit post that @mmstick made :)
     matches = {
       {
         {
